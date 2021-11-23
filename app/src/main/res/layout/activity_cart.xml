@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.CartActivity">
+
+
+
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/rlCart">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/llRestaurantStatic"
+            android:visibility="visible"
+            android:layout_below="@+id/toolbar"
+            android:layout_margin="@dimen/cart_header_margin">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:fontFamily="@font/poppins"
+                android:textAllCaps="false"
+                android:text="Ordering From :"
+                android:padding="@dimen/cart_text_padding" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/txtCartResName"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:fontFamily="@font/poppins_medium"
+                android:textAllCaps="false"
+                android:text="Restaurant Name Comes Here"
+                android:padding="@dimen/cart_text_padding" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_height="2dp"
+            android:layout_width="match_parent"
+            android:id="@+id/view1"
+            android:layout_below="@+id/llRestaurantStatic"
+            android:background="@color/colorPrimaryDark" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/recyclerCartItems"
+            android:layout_below="@+id/view1"
+            android:layout_margin="@dimen/cart_header_margin"
+            android:padding="@dimen/cart_recycler_padding"
+            android:layout_above="@+id/btnConfirmOrder" />
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/btnConfirmOrder"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:fontFamily="@font/poppins"
+            android:textAllCaps="false"
+            android:text="@string/confirm_order"
+            android:background="@color/colorPrimary"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/rlLoading"
+        android:visibility="invisible">
+
+        <ProgressBar
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/progressBar"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
